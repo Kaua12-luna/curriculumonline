@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Portfólio | Kauã Luna</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <div class="nav-links">
+        <a class="nav-link" href="Home.html">Home</a>
+        <a class="nav-link" href="portifolio.html">Portfólio</a>
+        <a class="nav-link" href="contato.html">Contato</a>
+      </div>
+      <button class="notification-btn" data-bs-toggle="modal" data-bs-target="#notificationModal">
+        <i class="bi bi-bell"></i> Notificações
+        <span class="notification-badge">99+</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home">
+      <div class="top-actions">
+        <!-- Dropdown -->
+        <div class="dropdown">
+          <button class="btn-custom btn-gray dropdown-toggle" data-bs-toggle="dropdown">
+            Menu Dropdown
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="portifolio.html">Portfólio</a></li>
+            <li><a class="dropdown-item" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <!-- Botão Sobre -->
+        <button class="btn-custom btn-pink" data-bs-toggle="modal" data-bs-target="#sobreModal">
+          Sobre mim
+        </button>
+        <!-- Botão Perfil -->
+        <button class="btn-custom btn-blue" onclick="mostrarPerfil()">
+          Ver Perfil
+        </button>
+      </div>
+      <!-- PERFIL -->
+      <div id="perfilBox" style="display: none; margin-top: 30px; text-align: center; color: rgb(190, 187, 187);">
+        <img 
+          src="59f7b9f8-756f-4cbb-8659-a811b90b80a7.jpg"
+          alt="Foto de Perfil"
+          style="
+            width: 220px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(175, 173, 173, 0.839);
+          "
+        >
+        <h3 style="margin-top: 15px;">Kauã Domingues Luna 
+          <br>Idade: 17 anos
+          <br>
+        </h3>
+        <p>Estudante do curso tecnico de Desenvolvimento De Sistemas do Senai Botucatu</p>
+      </div>
+    </section>
+    <!-- PORTFÓLIO -->
+    <section id="portfolio">
+      <div class="content-box">
+        <div class="accordion" id="accordionExample">
+          <!-- Experiência -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button 
+                class="accordion-button collapsed;"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne">
+                Experiência Profissional
+              </button>
+            </h2>
+            <div 
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Realização de atividades de serviços gerais
+              </div>
+            </div>
+          </div>
+          <!-- Habilidades -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo">
+                Habilidades Técnicas
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Hard Skills:</strong>
+                <br>- Desenvolvimento Web
+                <br>- Front-end
+                <br>- HTML
+                <br>- CSS
+                <br>- JavaScript
+                <br>- Bootstrap
+                <br>- Python
+                <br>- GitHub
+                <br>- Figma
+                <br>- MySQL
+                <br>- React
+                <br>- Backend
+                <br><br>
+                <strong>Soft Skills:</strong>
+                <br>- Comunicação
+                <br>- Trabalho em Equipe
+                <br>- Resolução de Problemas
+                <br>- Inglês básico
+              </div>
+            </div>
+          </div>
+          <!-- Formação -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree">
+                Formação Acadêmica
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p>
+                  2021 - Curso de Word, Power Point, Excel e Hardware
+                  <br>2024 - Curso básico de inglês
+                  <br>2025 - Curso de Competência Transversal - Tecnologia da Informação e Comunicação
+                  <br>2025 - Curso de Por dentro da Segurança Cibernética
+                  <br>2025 - Curso de Competência Transversal - Segurança no Trabalho
+                  <br>2025 - Curso de Desvendando a Descarbonização
+                  <br>2025 - Curso de Ética na Inteligência Artificial
+                  <br>2025 - Curso de FLUÊNCIA - FUNDAMENTOS DA INTELIGÊNCIA ARTIFICIAL
+                  <br>2025 - 2026 - Curso de Desenvolvimento de Sistemas (em andamento)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- RODAPÉ -->
+  <footer>
+    <button class="contact-btn" onclick="mostrarContato()">
+      Informações para Contato
+    </button>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/kaua_luna_/" target="_blank">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/kau%C3%A3-domingues-luna-694a322b7/" target="_blank">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://github.com/kaualuna-png" target="_blank">
+        <i class="bi bi-github"></i>
+      </a>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.875rem;">
+      © 2024 Kauã Luna - Todos os direitos reservados
+    </p>
+  </footer>
+  <!-- MODAL SOBRE -->
+  <div class="modal fade" id="sobreModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sobre Mim</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Olá! Sou Kauã Luna, desenvolvedor front-end apaixonado por criar interfaces modernas e responsivas.
+          </p>
+          <p>
+            Busco sempre aprender novas tecnologias e melhorar minhas habilidades para entregar os melhores resultados.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL NOTIFICAÇÕES -->
+  <div class="modal fade" id="notificationModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Notificações</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-info">
+            Você não tem novas notificações no momento.
+          </div>
+          <div class="list-group">
+            <div class="list-group-item">
+              <strong>Bem-vindo!</strong>
+              <small class="text-muted d-block">
+                Obrigado por visitar meu portfólio!
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+            Entendi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mostrar Perfil
+    function mostrarPerfil() {
+      const perfil = document.getElementById("perfilBox");
+      if (perfil.style.display === "none") {
+        perfil.style.display = "block";
+      } else {
+        perfil.style.display = "none";
+      }
+    }
+    // Mostrar Contato
+    function mostrarContato() {
+      alert("Email: k.dominguesluna@gmail.com\nTelefone: (14) 99637-2981");
+    }
+  </script>
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

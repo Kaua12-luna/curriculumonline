@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Feedback</title>
+    <link rel="stylesheet" href="style_contato.css">
+</head>
+<body>
+    <div class="btn-voltar-wrapper">
+        <a href="Home.html" class="btn-voltar">
+            ← VOLTAR PARA HOME
+        </a>
+    </div>
+    <div class="container">
+        <form class="formulario" id="formFeedback">
+            <h1>Formulário de Feedback</h1>
+            <div class="linha">
+                <input
+                    type="text"
+                    id="primeiroNome"
+                    placeholder="Primeiro Nome"
+                    required
+                >
+                <input
+                    type="text"
+                    id="ultimoNome"
+                    placeholder="Último Nome"
+                    required
+                >
+            </div>
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                class="campo"
+                required
+            >
+            <label for="pontos">
+                Diga os pontos interessantes do perfil:
+            </label>
+            <textarea
+                id="pontos"
+                rows="5"
+                required
+            ></textarea>
+            <label for="cargo">
+                Qual cargo está candidatando?
+            </label>
+            <input
+                type="text"
+                id="cargo"
+                placeholder="Cargo"
+                required
+            >
+            <label for="cargo">
+            
+            <label for="habilidade">
+                Qual habilidade mais te interessa?
+            </label>
+            <select
+                id="habilidade"
+                required
+            >
+                <option value="">
+                    Escolha...
+                </option>
+                <option>
+                    Programação
+                </option>
+                <option>
+                    Design
+                </option>
+                <option>
+                    Marketing
+                </option>
+                <option>
+                    Comunicação
+                </option>
+            </select>
+            <label for="linguagem">
+                Tem alguma linguagem de programação que você gostaria que eu utilizasse para trabalhar?
+            </label>
+            <input
+                type="text"
+                id="linguagem"
+                placeholder="Linguagem de Programação"
+            >
+             <label for="habilidade">
+                Quer que eu apresente algum certificodo dos cursos apresentados anteriormente?
+            </label>
+            <select
+                id="habilidade"
+                required
+            >
+                <option value="">
+                    Escolha qual certificao mais te interessa...
+                </option>
+                <option>
+                    Certificado do curso de Competência Transversal - Tecnologia da Informação e Comunicação 
+                </option>
+                <option>
+                    Certificado do curso de Por dentro da Segurança Cibernética
+                </option>
+                <option>
+                    Certificado do curso de Competência Transversal - Segurança no Trabalho
+                </option>
+                <option>
+                    Certificado do curso de Desvendando a Descarbonização
+                </option>
+                <option>
+                    Certificado do curso de Ética na Inteligência Artificial
+                </option>
+                <option>
+                    Certificado do curso de FLUÊNCIA - FUNDAMENTOS DA INTELIGÊNCIA ARTIFICIAL
+                </option>
+            </select>
+            <label for="comentario">
+                Adicione um comentário:
+            </label>
+            <textarea
+                id="comentario"
+                rows="4"
+            ></textarea>
+            <button
+                type="submit"
+                class="btn-enviar"
+            >
+                Enviar Feedback
+            </button>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById("formFeedback");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            if (!form.checkValidity()) {
+                alert("Preencha todos os campos obrigatórios.");
+                return;
+            }
+            const primeiroNome =
+                document.getElementById("primeiroNome").value.trim();
+            const ultimoNome =
+                document.getElementById("ultimoNome").value.trim();
+            const email =
+                document.getElementById("email").value.trim();
+            const pontos =
+                document.getElementById("pontos").value.trim();
+            const cargo =
+                document.getElementById("cargo").value.trim();
+            const habilidade =
+                document.getElementById("habilidade").value;
+            const linguagem =
+                document.getElementById("linguagem").value.trim();
+            const comentario =
+                document.getElementById("comentario").value.trim();
+            const emailDestino =
+                "k.dominguesluna@gmail.com";
+            const assunto = encodeURIComponent(
+                `Feedback de ${primeiroNome} ${ultimoNome}`
+            );
+            const corpoEmail = encodeURIComponent(
+`Nome: ${primeiroNome} ${ultimoNome}
+Email: ${email}
+Cargo Desejado:
+${cargo}
+Habilidade de Interesse:
+${habilidade}
+Linguagem de Programação:
+${linguagem}
+Pontos Interessantes:
+${pontos}
+Comentário:
+${comentario}`
+            );
+            const urlGmail =
+                `https://mail.google.com/mail/?view=cm&fs=1&to=${emailDestino}&su=${assunto}&body=${corpoEmail}`;
+            window.open(urlGmail, "_blank");
+            form.reset();
+        });
+    </script>
+</body>
+</html>
